@@ -6,31 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Roda das Emoções de Plutchik – Treino Emocional</title>
+  <title>Roda das Emoções de Plutchik – Psicoeducação Emocional</title>
 
-  <meta name="description" content="Plataforma clínica baseada na Roda das Emoções de Plutchik para psicoeducação e treino de habilidades emocionais, com registro, gráfico, PDF e envio ao psicólogo.">
-  <meta name="keywords" content="roda das emoções, Plutchik, emoções, habilidades emocionais, regulação emocional, psicologia, terapia, TCC, DBT">
+  <meta name="description" content="Plataforma clínica baseada na Roda das Emoções de Plutchik para psicoeducação emocional e registro clínico de emoções, com gráfico, PDF e envio ao psicólogo.">
+  <meta name="keywords" content="roda das emoções, Plutchik, emoções, psicoeducação emocional, regulação emocional, registro clínico de emoções, psicologia, terapia, TCC, DBT">
   <meta name="author" content="Richelmy Murta, Psicólogo Clínico">
 
   <!-- Ajuste a URL abaixo para o endereço real do seu GitHub Pages -->
   <link rel="canonical" href="https://ricmurtapsicologia.github.io/rodaemo-oes/">
 
-  <!-- Ícone: referência visual da roda em formato de flor -->
-  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/78/63/71/7863710610e4f8e6850fd873cbf29dea.jpg">
+  <!-- Favicon e imagem principal (circular / clínica) -->
+  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/87/94/80/879480aee2bbe6a01efd0cd848c456ff.jpg">
 
   <!-- Open Graph / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Roda das Emoções de Plutchik – Treino Emocional">
-  <meta property="og:description" content="Clique na emoção, registre a experiência, gere PDF e envie ao seu psicólogo. Psicoeducação baseada na Roda das Emoções de Plutchik.">
+  <meta property="og:title" content="Roda das Emoções de Plutchik – Psicoeducação Emocional">
+  <meta property="og:description" content="Clique na emoção, leia a explicação, registre o contexto e gere um resumo clínico. Psicoeducação emocional baseada na Roda das Emoções de Plutchik.">
   <meta property="og:url" content="https://ricmurtapsicologia.github.io/rodaemo-oes/">
-  <meta property="og:image" content="https://i.pinimg.com/736x/78/63/71/7863710610e4f8e6850fd873cbf29dea.jpg">
+  <meta property="og:image" content="https://i.pinimg.com/736x/87/94/80/879480aee2bbe6a01efd0cd848c456ff.jpg">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Roda das Emoções de Plutchik – Treino Emocional">
-  <meta name="twitter:description" content="Ferramenta interativa de treino de habilidades emocionais com registro, gráfico, PDF e envio ao psicólogo.">
-  <meta name="twitter:image" content="https://i.pinimg.com/736x/78/63/71/7863710610e4f8e6850fd873cbf29dea.jpg">
+  <meta name="twitter:title" content="Roda das Emoções de Plutchik – Psicoeducação Emocional">
+  <meta name="twitter:description" content="Ferramenta interativa de psicoeducação emocional e registro clínico de emoções, com gráfico, PDF e envio ao psicólogo.">
+  <meta name="twitter:image" content="https://i.pinimg.com/736x/87/94/80/879480aee2bbe6a01efd0cd848c456ff.jpg">
 
   <!-- JSON-LD para SEO (WebApplication) -->
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Roda das Emoções de Plutchik",
-    "description": "Ferramenta interativa de treino de habilidades emocionais baseada na teoria psicoevolutiva de Plutchik.",
+    "description": "Ferramenta interativa de psicoeducação emocional e treino de habilidades baseada na teoria psicoevolutiva de Plutchik.",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "author": {
@@ -72,11 +72,11 @@
       --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.6);
       --focus-ring: 0 0 0 2px rgba(248, 250, 252, 0.28),
                      0 0 0 4px rgba(249, 115, 22, 0.7);
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
       --stroke-wheel: #020617;
     }
 
-    /* Tema claro – sobrescreve variáveis */
+    /* Tema claro – sobrescreve variáveis (estado inicial) */
     body[data-theme="light"] {
       color-scheme: light;
       --bg: #f3f4f6;
@@ -91,7 +91,7 @@
       --stroke-wheel: #111827;
     }
 
-    *,
+    * ,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -113,7 +113,9 @@
       flex-direction: column;
     }
 
-    /* Cabeçalho – mobile first */
+    /* ------------------------------------------------------------------
+       Cabeçalho – mobile first
+       ------------------------------------------------------------------ */
 
     .app-header {
       border-bottom: 1px solid #111827;
@@ -161,6 +163,11 @@
       font-size: 0.86rem;
       color: var(--text-muted);
       max-width: 540px;
+      text-align: left;
+    }
+
+    nav[aria-label="Navegação principal"] {
+      width: 100%;
     }
 
     .nav-links {
@@ -175,7 +182,8 @@
       justify-content: flex-start;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .nav-links button.nav-help-button {
       color: var(--text-soft);
       text-decoration: none;
       padding: 0.3rem 0.6rem;
@@ -183,14 +191,33 @@
       transition: background-color 0.12s ease, color 0.12s ease;
     }
 
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-links button.nav-help-button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      display: inline-flex;
+      align-items: center;
+    }
+
     .nav-links a:hover,
-    .nav-links a:focus-visible {
+    .nav-links a:focus-visible,
+    .nav-links button.nav-help-button:hover,
+    .nav-links button.nav-help-button:focus-visible {
       background: rgba(15, 23, 42, 0.9);
       color: #f9fafb;
+      outline: none;
     }
 
     body[data-theme="light"] .nav-links a:hover,
-    body[data-theme="light"] .nav-links a:focus-visible {
+    body[data-theme="light"] .nav-links a:focus-visible,
+    body[data-theme="light"] .nav-links button.nav-help-button:hover,
+    body[data-theme="light"] .nav-links button.nav-help-button:focus-visible {
       background: rgba(209, 213, 219, 0.9);
       color: #111827;
     }
@@ -229,7 +256,9 @@
       box-shadow: var(--focus-ring);
     }
 
-    /* Layout principal – MOBILE FIRST */
+    /* ------------------------------------------------------------------
+       Layout principal – MOBILE FIRST
+       ------------------------------------------------------------------ */
 
     .layout {
       max-width: 1200px;
@@ -242,7 +271,7 @@
     }
 
     .panel {
-      background: radial-gradient(circle at top right, #111827 0, var(--bg-card) 50%, var(--bg-card) 100%);
+      background: radial-gradient(circle at top right, #111827 0, var(--bg-card) 45%, var(--bg-card) 100%);
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-soft);
@@ -268,6 +297,7 @@
 
     .panel-header {
       margin-bottom: 0.7rem;
+      text-align: left;
     }
 
     .section-title {
@@ -282,7 +312,9 @@
       color: var(--text-soft);
     }
 
-    /* Roda de emoções (flor SVG) – centralizada e grande no mobile */
+    /* ------------------------------------------------------------------
+       Roda de emoções – centralizada e legível
+       ------------------------------------------------------------------ */
 
     .wheel-wrapper {
       display: flex;
@@ -290,14 +322,14 @@
       align-items: center;
       justify-content: center;
       padding: 0.4rem 0 0.7rem;
-      max-width: 360px;
+      max-width: 340px;
       margin: 0 auto;
       text-align: center;
     }
 
     .emotion-wheel {
       width: 100%;
-      max-width: 360px;
+      max-width: 340px;
       height: auto;
       display: block;
       margin-bottom: 0.45rem;
@@ -325,12 +357,12 @@
 
     .wheel-segment.highlight {
       stroke-width: 2;
-      filter: drop-shadow(0 0 4px var(--accent-soft));
+      filter: drop-shadow(0 0 6px var(--accent-soft));
       transform: scale(1.03);
     }
 
     .wheel-label {
-      font-size: 11px; /* maior para mobile */
+      font-size: 11px;
       font-weight: 600;
       fill: var(--stroke-wheel);
       text-anchor: middle;
@@ -345,15 +377,17 @@
       stroke-dasharray: 2 3;
     }
 
-    /* Detalhes */
+    /* ------------------------------------------------------------------
+       Detalhes psicoeducativos
+       ------------------------------------------------------------------ */
 
     .details-card {
-      background: radial-gradient(circle at top left, #111827 0, var(--bg-card) 50%);
+      background: var(--bg-card);
       border-radius: var(--radius-lg);
       border: 1px solid #1f2937;
       padding: 0.8rem;
       margin-bottom: 0.7rem;
-      min-height: 180px;
+      min-height: 190px;
     }
 
     body[data-theme="light"] .details-card {
@@ -364,6 +398,7 @@
       margin: 0;
       font-size: 0.9rem;
       color: var(--text-muted);
+      text-align: justify;
     }
 
     .details-emotion-name {
@@ -373,15 +408,16 @@
     }
 
     .details-emotion-meta {
-      margin: 0 0 0.3rem;
+      margin: 0 0 0.4rem;
       font-size: 0.8rem;
       color: var(--text-soft);
     }
 
     .details-block {
-      margin: 0.2rem 0;
+      margin: 0.25rem 0;
       font-size: 0.9rem;
       color: var(--text-main);
+      text-align: justify;
     }
 
     .details-block strong {
@@ -394,9 +430,12 @@
       padding: 0;
       font-size: 0.84rem;
       color: var(--text-muted);
+      text-align: justify;
     }
 
-    /* Formulário */
+    /* ------------------------------------------------------------------
+       Formulário – registro clínico
+       ------------------------------------------------------------------ */
 
     .emotion-form {
       display: flex;
@@ -458,6 +497,22 @@
       outline: none;
       border-color: var(--accent);
       box-shadow: var(--focus-ring);
+    }
+
+    .helper-text {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      margin-top: 0.1rem;
+    }
+
+    .helper-warning {
+      margin-top: 0.4rem;
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
+    .helper-warning strong {
+      font-weight: 600;
     }
 
     .form-actions {
@@ -541,13 +596,47 @@
       box-shadow: var(--focus-ring);
     }
 
-    .helper-text {
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      margin-top: 0.1rem;
+    /* Feedback visual de registro */
+
+    .feedback-banner {
+      margin-top: 0.5rem;
+      border-radius: var(--radius-md);
+      padding: 0.4rem 0.6rem;
+      font-size: 0.8rem;
+      display: none;
     }
 
-    /* Gráficos e histórico */
+    .feedback-banner.is-visible {
+      display: block;
+    }
+
+    .feedback-banner--success {
+      background: rgba(22, 163, 74, 0.12);
+      border: 1px solid rgba(22, 163, 74, 0.8);
+      color: #bbf7d0;
+    }
+
+    .feedback-banner--error {
+      background: rgba(220, 38, 38, 0.12);
+      border: 1px solid rgba(220, 38, 38, 0.8);
+      color: #fecaca;
+    }
+
+    body[data-theme="light"] .feedback-banner--success {
+      background: #ecfdf3;
+      border-color: #16a34a;
+      color: #166534;
+    }
+
+    body[data-theme="light"] .feedback-banner--error {
+      background: #fef2f2;
+      border-color: #dc2626;
+      color: #991b1b;
+    }
+
+    /* ------------------------------------------------------------------
+       Gráfico e histórico
+       ------------------------------------------------------------------ */
 
     .charts-wrapper {
       display: grid;
@@ -585,6 +674,7 @@
       margin: 0 0 0.3rem;
       font-size: 0.78rem;
       color: var(--text-soft);
+      text-align: justify;
     }
 
     .history-table-wrapper {
@@ -655,7 +745,9 @@
       margin-top: 0.2rem;
     }
 
-    /* Sobre */
+    /* ------------------------------------------------------------------
+       Sobre
+       ------------------------------------------------------------------ */
 
     .panel-about {
       margin-top: 0.1rem;
@@ -664,13 +756,105 @@
     .about-content {
       font-size: 0.88rem;
       color: var(--text-muted);
+      text-align: justify;
     }
 
     .about-content ul {
       padding-left: 1rem;
     }
 
-    /* Rodapé – menos espaço entre linhas */
+    /* ------------------------------------------------------------------
+       Onboarding – modal de boas-vindas
+       ------------------------------------------------------------------ */
+
+    .onboarding-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 30;
+    }
+
+    .onboarding-backdrop[hidden] {
+      display: none;
+    }
+
+    .onboarding-panel {
+      max-width: 420px;
+      width: 100%;
+      background: var(--bg-card);
+      color: var(--text-main);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.1rem 1rem;
+    }
+
+    .onboarding-title {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .onboarding-intro {
+      margin: 0 0 0.6rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      text-align: justify;
+    }
+
+    .onboarding-steps {
+      margin: 0 0 0.7rem;
+      padding-left: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    .onboarding-steps li {
+      margin-bottom: 0.3rem;
+      text-align: justify;
+    }
+
+    .onboarding-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+    }
+
+    .onboarding-close {
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      background: transparent;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      cursor: pointer;
+    }
+
+    body[data-theme="light"] .onboarding-close {
+      border-color: #9ca3af;
+    }
+
+    .onboarding-close:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .onboarding-note {
+      margin: 0.3rem 0 0;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      text-align: justify;
+    }
+
+    /* ------------------------------------------------------------------
+       Rodapé – centrado e simétrico
+       ------------------------------------------------------------------ */
 
     .app-footer {
       margin-top: auto;
@@ -692,11 +876,10 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.3rem;
-      text-align: left;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      text-align: center;
     }
 
     .footer-main {
@@ -707,46 +890,25 @@
 
     .footer-main p {
       margin: 0.1rem 0;
-      line-height: 1.25; /* menos espaçado */
+      line-height: 1.3;
     }
 
     .footer-main strong {
       font-weight: 600;
     }
 
-    .footer-tagline {
-      font-size: 0.76rem;
-      opacity: 0.9;
-    }
-
-    .footer-badge {
-      font-size: 0.7rem;
-      padding: 0.22rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(249, 115, 22, 0.4);
-      background: rgba(15, 23, 42, 0.8);
-      color: #f9fafb;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      white-space: nowrap;
-      margin-top: 0.1rem;
-    }
-
-    body[data-theme="light"] .footer-badge {
-      background: #fff7ed;
-      color: #9a3412;
-      border-color: #fed7aa;
-    }
-
-    /* Acessibilidade */
+    /* ------------------------------------------------------------------
+       Acessibilidade genérica
+       ------------------------------------------------------------------ */
 
     [role="button"],
     svg [tabindex="0"] {
       cursor: pointer;
     }
 
-    /* RESPONSIVIDADE – telas maiores */
+    /* ------------------------------------------------------------------
+       Responsividade
+       ------------------------------------------------------------------ */
 
     @media (min-width: 768px) {
       .layout {
@@ -754,11 +916,11 @@
       }
 
       .wheel-wrapper {
-        max-width: 420px;
+        max-width: 380px;
       }
 
       .emotion-wheel {
-        max-width: 420px;
+        max-width: 380px;
       }
 
       .form-row-inline {
@@ -766,8 +928,7 @@
       }
 
       .footer-inner {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
       }
     }
 
@@ -805,19 +966,19 @@
 
     @media (max-width: 480px) {
       .wheel-label {
-        font-size: 13px; /* ainda maior em celulares bem pequenos */
+        font-size: 13px;
       }
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
   <header class="app-header">
     <div class="header-inner">
       <div>
         <p class="brand">Atlas Emocional</p>
         <h1 class="app-title">Roda das Emoções de Plutchik</h1>
         <p class="app-subtitle">
-          Psicoeducação e treino de habilidades emocionais. Clique na emoção, registre a situação, gere PDF e envie ao seu psicólogo.
+          Psicoeducação emocional e registro clínico de experiências. Escolha a emoção, entenda sua função e registre a situação com clareza.
         </p>
       </div>
       <nav aria-label="Navegação principal">
@@ -827,9 +988,14 @@
           <li><a href="#sec-graficos">Histórico</a></li>
           <li><a href="#sec-sobre">Sobre</a></li>
           <li>
+            <button type="button" class="nav-help-button" id="openOnboardingButton">
+              Como usar
+            </button>
+          </li>
+          <li>
             <button type="button" class="btn-theme-toggle" id="themeToggle">
-              <span id="themeIcon">🌙</span>
-              <span id="themeLabel">Tema escuro</span>
+              <span id="themeIcon">☀️</span>
+              <span id="themeLabel">Tema claro</span>
             </button>
           </li>
         </ul>
@@ -851,12 +1017,12 @@
         <svg
           id="emotionWheel"
           class="emotion-wheel"
-          viewBox="-180 -180 360 360"
+          viewBox="-190 -190 380 380"
           role="img"
           aria-label="Roda das Emoções de Plutchik com intensidades e combinações">
         </svg>
         <p class="wheel-help">
-          Clique em qualquer pétala ou combinação para explorar a emoção e registrar sua experiência.
+          Clique ou use Tab + Enter em qualquer pétala para explorar a emoção e registrar sua experiência.
         </p>
       </div>
     </section>
@@ -866,26 +1032,26 @@
       <header class="panel-header">
         <h2 id="titulo-detalhes" class="section-title">Detalhes da emoção e registro clínico</h2>
         <p class="section-subtitle">
-          Nomeie o que sente, entenda a função da emoção e registre o contexto para trabalhar em sessão.
+          Nomeie o que sente, entenda a função da emoção e registre o contexto para trabalhar em sessão ou compartilhar com alguém de confiança.
         </p>
       </header>
 
       <article class="details-card" id="detailsCard" aria-live="polite">
         <p class="details-placeholder">
-          Nenhuma emoção foi selecionada ainda.
-          Use a roda ao lado para escolher uma emoção ou combinação e ver orientações psicoeducativas.
+          Nenhuma emoção foi selecionada ainda. Use a roda ao lado para escolher uma emoção ou combinação e ver orientações psicoeducativas em linguagem simples.
         </p>
       </article>
 
-      <form class="emotion-form" id="emotionForm">
+      <form class="emotion-form" id="emotionForm" novalidate>
         <div class="form-row-inline">
           <div class="form-group">
             <label for="patientName" class="form-label">Nome do paciente</label>
-            <input id="patientName" class="form-input" type="text" placeholder="Digite o nome do paciente">
+            <input id="patientName" class="form-input" type="text" autocomplete="name" placeholder="Digite o nome do paciente (opcional)">
+            <p class="helper-text">Ajuda a identificar o registro quando for conversar em sessão.</p>
           </div>
           <div class="form-group" style="max-width:110px;">
             <label for="patientAge" class="form-label">Idade</label>
-            <input id="patientAge" class="form-input" type="number" min="0" max="120" placeholder="Anos">
+            <input id="patientAge" class="form-input" type="number" min="0" max="120" inputmode="numeric" placeholder="Anos">
           </div>
           <div class="form-group" style="max-width:170px;">
             <label for="recordDate" class="form-label">Data de referência</label>
@@ -897,6 +1063,7 @@
           <div class="form-group">
             <label for="selectedEmotion" class="form-label">Emoção selecionada</label>
             <input id="selectedEmotion" class="form-input" type="text" placeholder="Clique em uma pétala na roda (pode editar o nome se desejar)">
+            <p class="helper-text">Você pode ajustar o nome para ficar mais parecido com sua experiência.</p>
           </div>
           <div class="form-group">
             <label for="userIntensity" class="form-label">Intensidade percebida</label>
@@ -905,37 +1072,47 @@
               <option value="moderada" selected>Moderada</option>
               <option value="intensa">Intensa</option>
             </select>
+            <p class="helper-text">Escolha como a emoção pareceu forte para você neste momento.</p>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="contextInput" class="form-label">Contexto emocional</label>
+          <label for="contextInput" class="form-label">Contexto emocional *</label>
           <textarea id="contextInput" placeholder="O que aconteceu? Onde você estava? Com quem?"></textarea>
+          <p class="helper-text">Descreva a cena como se contasse a alguém de confiança em poucas frases.</p>
         </div>
 
         <div class="form-row-inline">
           <div class="form-group">
             <label for="triggersInput" class="form-label">Gatilhos percebidos</label>
             <textarea id="triggersInput" placeholder="Palavras, imagens, situações ou pensamentos que parecem ativar essa emoção."></textarea>
+            <p class="helper-text">Anote o que parece acender a emoção, mesmo que ainda não tenha certeza.</p>
           </div>
           <div class="form-group">
             <label for="behaviorsInput" class="form-label">O que você fez</label>
             <textarea id="behaviorsInput" placeholder="Como você reagiu? O que fez ou deixou de fazer?"></textarea>
+            <p class="helper-text">Inclua ações e também o que você evitou fazer por causa da emoção.</p>
           </div>
         </div>
 
         <div class="form-group">
           <label for="desiredInput" class="form-label">Como gostaria de ter reagido</label>
           <textarea id="desiredInput" placeholder="Qual seria uma resposta mais alinhada com seus valores e objetivos?"></textarea>
+          <p class="helper-text">Use este espaço para desenhar uma versão mais cuidadosa consigo e com os outros.</p>
         </div>
 
         <p class="helper-text">
           Este registro é para uso pessoal e para ser compartilhado em sessão. Nada é enviado automaticamente a servidores.
         </p>
 
+        <div id="feedbackBanner" class="feedback-banner" role="status" aria-live="polite"></div>
+
         <div class="form-actions">
           <button type="button" class="btn-ghost" id="sendWhatsappButton">
             Enviar resumo ao psicólogo
+          </button>
+          <button type="button" class="btn-ghost" id="sharePageButton">
+            Compartilhar esta página via WhatsApp
           </button>
           <button type="button" class="btn-secondary" id="downloadPdfButton">
             Baixar PDF do meu registro
@@ -944,6 +1121,10 @@
             Registrar emoção
           </button>
         </div>
+
+        <p class="helper-warning">
+          <strong>Lembrete importante:</strong> o WhatsApp não substitui serviços de urgência. Em situações de risco imediato, procure atendimento de emergência ou serviços locais de crise. Esta ferramenta é complementar à psicoterapia.
+        </p>
       </form>
     </section>
 
@@ -952,7 +1133,7 @@
       <header class="panel-header">
         <h2 id="titulo-graficos" class="section-title">Histórico emocional e gráfico</h2>
         <p class="section-subtitle">
-          Use o histórico para observar padrões e planejar, junto com o psicólogo, novas estratégias de cuidado.
+          Observe padrões ao longo do tempo e use os registros como base para decisões e planos em terapia.
         </p>
       </header>
 
@@ -960,8 +1141,8 @@
         <article class="chart-card" aria-label="Gráfico de frequência por emoção primária">
           <h3 class="chart-title">Frequência das emoções básicas</h3>
           <p class="chart-helper">
-            Cada barra representa quantas vezes cada emoção primária foi registrada neste navegador
-            (diades contam para as duas emoções envolvidas, com peso 0,5 para cada uma).
+            Cada barra representa quantas vezes cada emoção primária foi registrada neste navegador.
+            Combinações (diades) contam para as duas emoções envolvidas, com peso 0,5 para cada uma.
           </p>
           <div style="height:220px;">
             <canvas id="emotionChart" aria-label="Gráfico de barras de frequência emocional" role="img"></canvas>
@@ -971,7 +1152,7 @@
         <article class="history-card" aria-label="Histórico de registros emocionais">
           <h3 class="history-title">Histórico de registros</h3>
           <p class="history-help">
-            Os dados ficam salvos apenas neste dispositivo através do armazenamento local. Você pode apagá-los quando desejar.
+            Os dados ficam salvos apenas neste dispositivo por meio do armazenamento local. Você pode apagá-los quando desejar.
           </p>
 
           <div class="history-table-wrapper">
@@ -1027,23 +1208,44 @@
     </section>
   </main>
 
+  <!-- Onboarding -->
+  <div class="onboarding-backdrop" id="onboardingModal" hidden>
+    <section class="onboarding-panel" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle" aria-describedby="onboardingDescription">
+      <h2 id="onboardingTitle" class="onboarding-title">Como usar a Roda das Emoções</h2>
+      <p id="onboardingDescription" class="onboarding-intro">
+        Esta ferramenta foi pensada para que você se sinta acolhido ao olhar para suas emoções, com clareza e sem julgamentos.
+      </p>
+      <ol class="onboarding-steps">
+        <li><strong>Escolha uma emoção na roda.</strong> Toque em uma pétala que pareça combinar com o que você está sentindo agora.</li>
+        <li><strong>Leia a explicação da emoção e veja como ela funciona em você.</strong> Observe a definição, a função e os principais riscos.</li>
+        <li><strong>Registre a situação.</strong> Anote o contexto, gatilhos e como reagiu, para conversar em sessão ou compartilhar com alguém de confiança.</li>
+      </ol>
+      <p class="onboarding-note">
+        Você pode reabrir estas orientações sempre que quiser clicando em *Como usar* no topo da página.
+      </p>
+      <div class="onboarding-actions">
+        <button type="button" class="onboarding-close" id="onboardingCloseButton">
+          Fechar
+        </button>
+        <button type="button" class="btn-primary" id="onboardingStartButton">
+          Entendi, começar
+        </button>
+      </div>
+    </section>
+  </div>
+
   <footer class="app-footer">
     <div class="footer-inner">
       <div class="footer-main">
         <p>
           <strong>Richelmy Murta – Psicólogo Clínico</strong>
         </p>
-        <p class="footer-tagline">
+        <p>
           Ferramenta de psicoeducação baseada na Roda das Emoções de Plutchik. Uso clínico e educativo responsável.
         </p>
-        <p class="footer-tagline">
-          © <span id="footerYear"></span>. Registros armazenados apenas neste dispositivo.
+        <p>
+          © 2025. Registros armazenados apenas neste dispositivo.
         </p>
-      </div>
-      <div>
-        <span class="footer-badge">
-          🧠 Treino de habilidades emocionais
-        </span>
       </div>
     </div>
   </footer>
@@ -1951,11 +2153,11 @@
       const centerX = 0;
       const centerY = 0;
       const stepAngle = 45;
-      const innerR = 35;
-      const midR = 80;
-      const outerR = 125;
-      const diadInnerR = 140;
-      const diadOuterR = 165;
+      const innerR = 32;
+      const midR = 75;
+      const outerR = 118;
+      const diadInnerR = 135;
+      const diadOuterR = 160;
 
       const degToRad = (deg) => (deg * Math.PI) / 180;
 
@@ -2121,6 +2323,7 @@
     let currentEmotionCode = null;
     let currentChart = null;
     const STORAGE_KEY = "plutchik_records_v1";
+    let feedbackTimeoutId = null;
 
     function getRecords() {
       try {
@@ -2135,6 +2338,32 @@
 
     function saveRecords(records) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+    }
+
+    /* ------------------------------------------------------------------
+       Feedback visual
+       ------------------------------------------------------------------ */
+
+    function showFeedback(message, type) {
+      const el = document.getElementById("feedbackBanner");
+      if (!el) return;
+
+      el.textContent = message;
+      el.className = "feedback-banner is-visible";
+
+      if (type === "success") {
+        el.classList.add("feedback-banner--success");
+      } else if (type === "error") {
+        el.classList.add("feedback-banner--error");
+      }
+
+      if (feedbackTimeoutId) {
+        clearTimeout(feedbackTimeoutId);
+      }
+      feedbackTimeoutId = setTimeout(() => {
+        el.classList.remove("is-visible", "feedback-banner--success", "feedback-banner--error");
+        el.textContent = "";
+      }, 5000);
     }
 
     /* ------------------------------------------------------------------
@@ -2246,7 +2475,9 @@
     }
 
     function buildChart() {
-      const ctx = document.getElementById("emotionChart").getContext("2d");
+      const canvas = document.getElementById("emotionChart");
+      const ctx = canvas.getContext("2d");
+
       const labels = [
         "Alegria",
         "Confiança",
@@ -2257,6 +2488,10 @@
         "Raiva",
         "Antecipação"
       ];
+
+      const styles = getComputedStyle(document.body);
+      const textColor = styles.getPropertyValue("--text-main").trim() || "#111827";
+
       currentChart = new Chart(ctx, {
         type: "bar",
         data: {
@@ -2271,11 +2506,11 @@
           maintainAspectRatio: false,
           scales: {
             x: {
-              ticks: { color: "var(--text-main)" },
+              ticks: { color: textColor },
               grid: { display: false }
             },
             y: {
-              ticks: { color: "var(--text-main)" },
+              ticks: { color: textColor },
               grid: { color: "rgba(148, 163, 184, 0.3)" },
               beginAtZero: true,
               precision: 0
@@ -2284,7 +2519,7 @@
           plugins: {
             legend: {
               labels: {
-                color: "var(--text-main)"
+                color: textColor
               }
             }
           }
@@ -2331,6 +2566,19 @@
       currentChart.update();
     }
 
+    function updateChartColors() {
+      if (!currentChart) return;
+      const styles = getComputedStyle(document.body);
+      const textColor = styles.getPropertyValue("--text-main").trim() || "#111827";
+
+      currentChart.options.scales.x.ticks.color = textColor;
+      currentChart.options.scales.y.ticks.color = textColor;
+      if (currentChart.options.plugins && currentChart.options.plugins.legend && currentChart.options.plugins.legend.labels) {
+        currentChart.options.plugins.legend.labels.color = textColor;
+      }
+      currentChart.update();
+    }
+
     /* ------------------------------------------------------------------
        Registro
        ------------------------------------------------------------------ */
@@ -2338,7 +2586,7 @@
     function handleFormSubmit(event) {
       event.preventDefault();
       if (!currentEmotionCode || !INFO_MAP[currentEmotionCode]) {
-        alert("Selecione uma emoção na roda antes de registrar.");
+        showFeedback("Selecione uma emoção na roda antes de registrar.", "error");
         return;
       }
 
@@ -2351,6 +2599,11 @@
       const triggers = document.getElementById("triggersInput").value.trim();
       const behaviors = document.getElementById("behaviorsInput").value.trim();
       const desired = document.getElementById("desiredInput").value.trim();
+
+      if (!context) {
+        showFeedback("Para que o registro seja útil, descreva um pouco o contexto da emoção.", "error");
+        return;
+      }
 
       const now = new Date();
       const emotionLabelInput = document.getElementById("selectedEmotion").value.trim();
@@ -2382,7 +2635,7 @@
       renderHistory();
       updateChart();
 
-      alert("Registro salvo localmente com sucesso.");
+      showFeedback("Registro salvo neste dispositivo. Leve estas anotações para a próxima sessão.", "success");
     }
 
     /* ------------------------------------------------------------------
@@ -2520,9 +2773,7 @@
       doc.setFont("helvetica", "normal");
       doc.setFontSize(10);
       const closingText = doc.splitTextToSize(
-        "Este registro é um ponto de partida para a conversa em psicoterapia. " +
-        "Use este material para identificar padrões, aprofundar reflexões e planejar respostas mais alinhadas aos seus valores. " +
-        "Abaixo, há espaço para anotações futuras do paciente e do psicólogo:",
+        "Este registro é um ponto de partida para a conversa em psicoterapia. Use este material para identificar padrões, aprofundar reflexões e planejar respostas mais alinhadas aos seus valores. Abaixo, há espaço para anotações futuras do paciente e do psicólogo:",
         180
       );
       doc.text(closingText, margin, finalY);
@@ -2574,9 +2825,21 @@
         "Emoção: " + emotionLabel + "\n" +
         "Intensidade percebida: " + userIntensity + "\n" +
         "Resumo do contexto: " + (shortContext || "-") + "\n\n" +
-        "Mensagem enviada automaticamente pela ferramenta clínica de registro emocional.";
+        "Mensagem gerada pela ferramenta clínica de psicoeducação emocional e registro de emoções.";
 
+      // Substitua o número abaixo pelo número do psicólogo, se desejar
       const url = "https://wa.me/5535984640729?text=" + encodeURIComponent(textPlain);
+      window.open(url, "_blank");
+    }
+
+    function handleSharePageWhatsapp() {
+      const pageUrl = "https://ricmurtapsicologia.github.io/rodaemo-oes/";
+      const textPlain =
+        "Estou usando uma ferramenta gratuita de psicoeducação emocional baseada na Roda das Emoções de Plutchik para registrar emoções, contextos e respostas.\n\n" +
+        "Ela ajuda a identificar sentimentos, entender a função das emoções e organizar registros para conversar em terapia.\n\n" +
+        "Você pode acessar a ferramenta aqui: " + pageUrl;
+
+      const url = "https://wa.me/?text=" + encodeURIComponent(textPlain);
       window.open(url, "_blank");
     }
 
@@ -2591,29 +2854,88 @@
 
       if (theme === "light") {
         body.dataset.theme = "light";
-        icon.textContent = "☀️";
-        label.textContent = "Tema claro";
+        if (icon) icon.textContent = "☀️";
+        if (label) label.textContent = "Tema claro";
       } else {
         body.dataset.theme = "dark";
-        icon.textContent = "🌙";
-        label.textContent = "Tema escuro";
+        if (icon) icon.textContent = "🌙";
+        if (label) label.textContent = "Tema escuro";
       }
+
+      // Opcional: manter registro, mas sempre iniciar em claro
       localStorage.setItem("plutchik_theme", theme);
+      updateChartColors();
     }
 
     function initTheme() {
-      const saved = localStorage.getItem("plutchik_theme");
-      if (saved === "light" || saved === "dark") {
-        applyTheme(saved);
-      } else {
-        applyTheme("dark");
-      }
+      // Requisito: sempre iniciar em modo claro, ignorando o último estado salvo
+      applyTheme("light");
 
       const btn = document.getElementById("themeToggle");
-      btn.addEventListener("click", () => {
-        const next = document.body.dataset.theme === "light" ? "dark" : "light";
-        applyTheme(next);
-      });
+      if (btn) {
+        btn.addEventListener("click", () => {
+          const next = document.body.dataset.theme === "light" ? "dark" : "light";
+          applyTheme(next);
+        });
+      }
+    }
+
+    /* ------------------------------------------------------------------
+       Onboarding
+       ------------------------------------------------------------------ */
+
+    function openOnboarding() {
+      const modal = document.getElementById("onboardingModal");
+      if (!modal) return;
+      modal.hidden = false;
+      const startBtn = document.getElementById("onboardingStartButton");
+      if (startBtn) {
+        startBtn.focus();
+      }
+    }
+
+    function closeOnboarding() {
+      const modal = document.getElementById("onboardingModal");
+      if (!modal) return;
+      modal.hidden = true;
+    }
+
+    function initOnboarding() {
+      const openBtn = document.getElementById("openOnboardingButton");
+      const closeBtn = document.getElementById("onboardingCloseButton");
+      const startBtn = document.getElementById("onboardingStartButton");
+      const modal = document.getElementById("onboardingModal");
+
+      if (openBtn) {
+        openBtn.addEventListener("click", () => {
+          openOnboarding();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => closeOnboarding());
+      }
+
+      if (startBtn) {
+        startBtn.addEventListener("click", () => closeOnboarding());
+      }
+
+      if (modal) {
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            closeOnboarding();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (!modal.hidden && event.key === "Escape") {
+            closeOnboarding();
+          }
+        });
+      }
+
+      // Onboarding deve aparecer sempre ao carregar a página
+      openOnboarding();
     }
 
     /* ------------------------------------------------------------------
@@ -2621,30 +2943,33 @@
        ------------------------------------------------------------------ */
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("footerYear").textContent = new Date().getFullYear();
-
       const today = new Date();
       const isoToday = today.toISOString().slice(0, 10);
-      document.getElementById("recordDate").value = isoToday;
+      const recordDateInput = document.getElementById("recordDate");
+      if (recordDateInput) {
+        recordDateInput.value = isoToday;
+      }
 
       initTheme();
       buildWheel();
       renderHistory();
       buildChart();
+      initOnboarding();
 
       document.getElementById("emotionForm").addEventListener("submit", handleFormSubmit);
       document.getElementById("downloadPdfButton").addEventListener("click", handleDownloadPdf);
       document.getElementById("sendWhatsappButton").addEventListener("click", handleSendWhatsapp);
+      document.getElementById("sharePageButton").addEventListener("click", handleSharePageWhatsapp);
+
       document.getElementById("clearHistoryButton").addEventListener("click", () => {
         if (confirm("Deseja realmente apagar todo o histórico deste navegador?")) {
           saveRecords([]);
           renderHistory();
           updateChart();
+          showFeedback("Histórico apagado deste dispositivo.", "success");
         }
       });
     });
   </script>
 </body>
 </html>
-
-
