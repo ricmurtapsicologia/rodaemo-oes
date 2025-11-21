@@ -9,7 +9,7 @@
   <title>Roda das Emoções de Plutchik – Psicoeducação Emocional</title>
 
   <meta name="description" content="Plataforma clínica baseada na Roda das Emoções de Plutchik para psicoeducação emocional e registro clínico de emoções, com gráfico, PDF e envio ao psicólogo.">
-  <meta name="keywords" content="roda das emoções, Plutchik, emoções, psicoeducação emocional, regulação emocional, registro clínico de emoções, psicologia, terapia, TCC, DBT">
+  <meta name="keywords" content="Roda das Emoções de Plutchik, emoções, psicoeducação emocional, regulação emocional, registro clínico de emoções, psicologia, terapia, TCC, DBT">
   <meta name="author" content="Richelmy Murta, Psicólogo Clínico">
 
   <!-- Ajuste a URL abaixo para o endereço real do seu GitHub Pages -->
@@ -56,39 +56,39 @@
 
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #020617;
-      --bg-gradient: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
-      --bg-card: #020617;
-      --border-subtle: #1f2937;
-      --accent: #f97316;
-      --accent-soft: rgba(249, 115, 22, 0.3);
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --text-soft: #6b7280;
-      --radius-xl: 1.3rem;
-      --radius-lg: 1rem;
-      --radius-md: 0.75rem;
-      --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.6);
-      --focus-ring: 0 0 0 2px rgba(248, 250, 252, 0.28),
-                     0 0 0 4px rgba(249, 115, 22, 0.7);
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      --stroke-wheel: #020617;
-    }
-
-    /* Tema claro – sobrescreve variáveis (estado inicial) */
-    body[data-theme="light"] {
+      /* Tema padrão: claro */
       color-scheme: light;
       --bg: #f3f4f6;
       --bg-gradient: radial-gradient(circle at top, #e5e7eb 0, #f9fafb 45%, #e5e7eb 100%);
       --bg-card: #ffffff;
       --border-subtle: #d1d5db;
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.15);
       --text-main: #111827;
       --text-muted: #374151;
       --text-soft: #4b5563;
+      --radius-xl: 1.3rem;
+      --radius-lg: 1rem;
+      --radius-md: 0.75rem;
       --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.18);
-      --accent-soft: rgba(249, 115, 22, 0.15);
+      --focus-ring: 0 0 0 2px rgba(15, 23, 42, 0.18),
+                    0 0 0 4px rgba(249, 115, 22, 0.7);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
       --stroke-wheel: #111827;
+    }
+
+    body[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #020617;
+      --bg-gradient: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+      --bg-card: #020617;
+      --border-subtle: #1f2937;
+      --accent-soft: rgba(249, 115, 22, 0.3);
+      --text-main: #e5e7eb;
+      --text-muted: #e5e7eb;
+      --text-soft: #9ca3af;
+      --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.6);
+      --stroke-wheel: #f9fafb;
     }
 
     * ,
@@ -118,20 +118,20 @@
        ------------------------------------------------------------------ */
 
     .app-header {
-      border-bottom: 1px solid #111827;
+      border-bottom: 1px solid #e5e7eb;
       padding: 0.7rem 1rem 0.6rem;
-      background: rgba(2, 6, 23, 0.96);
-      color: #e5e7eb;
+      background: rgba(249, 250, 251, 0.96);
+      color: #111827;
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
-    body[data-theme="light"] .app-header {
-      background: rgba(249, 250, 251, 0.96);
-      border-bottom-color: #e5e7eb;
-      color: #111827;
+    body[data-theme="dark"] .app-header {
+      background: rgba(2, 6, 23, 0.96);
+      border-bottom-color: #111827;
+      color: #e5e7eb;
     }
 
     .header-inner {
@@ -209,25 +209,25 @@
     .nav-links a:focus-visible,
     .nav-links button.nav-help-button:hover,
     .nav-links button.nav-help-button:focus-visible {
-      background: rgba(15, 23, 42, 0.9);
-      color: #f9fafb;
+      background: rgba(209, 213, 219, 0.9);
+      color: #111827;
       outline: none;
     }
 
-    body[data-theme="light"] .nav-links a:hover,
-    body[data-theme="light"] .nav-links a:focus-visible,
-    body[data-theme="light"] .nav-links button.nav-help-button:hover,
-    body[data-theme="light"] .nav-links button.nav-help-button:focus-visible {
-      background: rgba(209, 213, 219, 0.9);
-      color: #111827;
+    body[data-theme="dark"] .nav-links a:hover,
+    body[data-theme="dark"] .nav-links a:focus-visible,
+    body[data-theme="dark"] .nav-links button.nav-help-button:hover,
+    body[data-theme="dark"] .nav-links button.nav-help-button:focus-visible {
+      background: rgba(15, 23, 42, 0.9);
+      color: #f9fafb;
     }
 
     .btn-theme-toggle {
       border-radius: 999px;
-      border: 1px solid #4b5563;
+      border: 1px solid #9ca3af;
       padding: 0.3rem 0.6rem;
-      background: rgba(15, 23, 42, 0.9);
-      color: #f9fafb;
+      background: #e5e7eb;
+      color: #111827;
       cursor: pointer;
       font-size: 0.8rem;
       display: inline-flex;
@@ -236,19 +236,19 @@
       transition: background 0.12s ease, transform 0.08s ease;
     }
 
-    body[data-theme="light"] .btn-theme-toggle {
-      background: #e5e7eb;
-      color: #111827;
-      border-color: #9ca3af;
+    body[data-theme="dark"] .btn-theme-toggle {
+      background: rgba(15, 23, 42, 0.9);
+      color: #f9fafb;
+      border-color: #4b5563;
     }
 
     .btn-theme-toggle:hover {
       transform: translateY(-1px);
-      background: #111827;
+      background: #d1d5db;
     }
 
-    body[data-theme="light"] .btn-theme-toggle:hover {
-      background: #d1d5db;
+    body[data-theme="dark"] .btn-theme-toggle:hover {
+      background: #111827;
     }
 
     .btn-theme-toggle:focus-visible {
@@ -271,7 +271,7 @@
     }
 
     .panel {
-      background: radial-gradient(circle at top right, #111827 0, var(--bg-card) 45%, var(--bg-card) 100%);
+      background: radial-gradient(circle at top right, #e5e7eb 0, var(--bg-card) 55%, var(--bg-card) 100%);
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-soft);
@@ -279,8 +279,8 @@
       min-height: 0;
     }
 
-    body[data-theme="light"] .panel {
-      background: radial-gradient(circle at top right, #e5e7eb 0, #ffffff 55%, #ffffff 100%);
+    body[data-theme="dark"] .panel {
+      background: radial-gradient(circle at top right, #111827 0, #020617 45%, #020617 100%);
     }
 
     .panel-wheel {
@@ -321,15 +321,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 0.4rem 0 0.7rem;
-      max-width: 340px;
+      padding: 0.8rem 0 1rem;
+      max-width: 380px;
       margin: 0 auto;
       text-align: center;
     }
 
     .emotion-wheel {
       width: 100%;
-      max-width: 340px;
+      max-width: 380px;
       height: auto;
       display: block;
       margin-bottom: 0.45rem;
@@ -362,7 +362,7 @@
     }
 
     .wheel-label {
-      font-size: 11px;
+      font-size: 0.78rem;
       font-weight: 600;
       fill: var(--stroke-wheel);
       text-anchor: middle;
@@ -384,14 +384,10 @@
     .details-card {
       background: var(--bg-card);
       border-radius: var(--radius-lg);
-      border: 1px solid #1f2937;
+      border: 1px solid var(--border-subtle);
       padding: 0.8rem;
       margin-bottom: 0.7rem;
       min-height: 190px;
-    }
-
-    body[data-theme="light"] .details-card {
-      border-color: #d1d5db;
     }
 
     .details-placeholder {
@@ -440,7 +436,7 @@
     .emotion-form {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.6rem;
     }
 
     .form-row-inline {
@@ -465,19 +461,12 @@
     textarea {
       width: 100%;
       border-radius: var(--radius-md);
-      border: 1px solid #1f2937;
+      border: 1px solid var(--border-subtle);
       padding: 0.5rem 0.6rem;
       background: var(--bg-card);
       color: var(--text-main);
       font-family: var(--font-main);
       font-size: 0.9rem;
-    }
-
-    body[data-theme="light"] .form-input,
-    body[data-theme="light"] .form-select,
-    body[data-theme="light"] textarea {
-      border-color: #d1d5db;
-      background: #ffffff;
     }
 
     textarea {
@@ -509,6 +498,7 @@
       margin-top: 0.4rem;
       font-size: 0.76rem;
       line-height: 1.4;
+      text-align: justify;
     }
 
     .helper-warning strong {
@@ -520,8 +510,9 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       margin-top: 0.2rem;
+      text-align: center;
     }
 
     .btn-primary,
@@ -554,39 +545,39 @@
     }
 
     .btn-secondary {
-      background: rgba(15, 23, 42, 0.95);
-      color: var(--text-muted);
-      border: 1px solid #1f2937;
+      background: #f3f4f6;
+      color: #111827;
+      border: 1px solid #d1d5db;
     }
 
-    body[data-theme="light"] .btn-secondary {
-      background: #f3f4f6;
-      border-color: #d1d5db;
-      color: #111827;
+    body[data-theme="dark"] .btn-secondary {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: #1f2937;
+      color: var(--text-muted);
     }
 
     .btn-ghost {
       background: transparent;
       color: var(--text-soft);
-      border: 1px dashed #374151;
+      border: 1px dashed #9ca3af;
     }
 
-    body[data-theme="light"] .btn-ghost {
-      border-color: #9ca3af;
+    body[data-theme="dark"] .btn-ghost {
+      border-color: #374151;
     }
 
     .btn-primary:hover:not(:disabled),
     .btn-secondary:hover,
     .btn-ghost:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
     }
 
     .btn-primary:active:not(:disabled),
     .btn-secondary:active,
     .btn-ghost:active {
       transform: translateY(0);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
     }
 
     .btn-primary:focus-visible,
@@ -611,27 +602,27 @@
     }
 
     .feedback-banner--success {
-      background: rgba(22, 163, 74, 0.12);
-      border: 1px solid rgba(22, 163, 74, 0.8);
-      color: #bbf7d0;
-    }
-
-    .feedback-banner--error {
-      background: rgba(220, 38, 38, 0.12);
-      border: 1px solid rgba(220, 38, 38, 0.8);
-      color: #fecaca;
-    }
-
-    body[data-theme="light"] .feedback-banner--success {
       background: #ecfdf3;
-      border-color: #16a34a;
+      border: 1px solid #16a34a;
       color: #166534;
     }
 
-    body[data-theme="light"] .feedback-banner--error {
+    .feedback-banner--error {
       background: #fef2f2;
-      border-color: #dc2626;
+      border: 1px solid #dc2626;
       color: #991b1b;
+    }
+
+    body[data-theme="dark"] .feedback-banner--success {
+      background: rgba(22, 163, 74, 0.12);
+      border-color: rgba(22, 163, 74, 0.8);
+      color: #bbf7d0;
+    }
+
+    body[data-theme="dark"] .feedback-banner--error {
+      background: rgba(220, 38, 38, 0.12);
+      border-color: rgba(220, 38, 38, 0.8);
+      color: #fecaca;
     }
 
     /* ------------------------------------------------------------------
@@ -647,16 +638,16 @@
 
     .chart-card,
     .history-card {
-      background: rgba(2, 6, 23, 0.96);
+      background: #ffffff;
       border-radius: var(--radius-lg);
-      border: 1px solid #1f2937;
+      border: 1px solid #d1d5db;
       padding: 0.65rem 0.75rem;
     }
 
-    body[data-theme="light"] .chart-card,
-    body[data-theme="light"] .history-card {
-      background: #ffffff;
-      border-color: #d1d5db;
+    body[data-theme="dark"] .chart-card,
+    body[data-theme="dark"] .history-card {
+      background: rgba(2, 6, 23, 0.96);
+      border-color: #1f2937;
     }
 
     .history-card {
@@ -682,13 +673,13 @@
       max-height: 240px;
       overflow: auto;
       border-radius: var(--radius-md);
-      border: 1px solid #1f2937;
-      background: #020617;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
     }
 
-    body[data-theme="light"] .history-table-wrapper {
-      background: #f9fafb;
-      border-color: #d1d5db;
+    body[data-theme="dark"] .history-table-wrapper {
+      background: #020617;
+      border-color: #1f2937;
     }
 
     .history-table {
@@ -700,26 +691,26 @@
     .history-table th,
     .history-table td {
       padding: 0.28rem 0.4rem;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.85);
+      border-bottom: 1px solid #e5e7eb;
       text-align: left;
     }
 
-    body[data-theme="light"] .history-table th,
-    body[data-theme="light"] .history-table td {
-      border-bottom-color: #e5e7eb;
+    body[data-theme="dark"] .history-table th,
+    body[data-theme="dark"] .history-table td {
+      border-bottom-color: rgba(31, 41, 55, 0.85);
     }
 
     .history-table th {
       position: sticky;
       top: 0;
-      background: #020617;
+      background: #f9fafb;
       z-index: 1;
       font-weight: 600;
       color: var(--text-muted);
     }
 
-    body[data-theme="light"] .history-table th {
-      background: #f9fafb;
+    body[data-theme="dark"] .history-table th {
+      background: #020617;
     }
 
     .history-table tr:last-child td {
@@ -828,7 +819,7 @@
 
     .onboarding-close {
       border-radius: 999px;
-      border: 1px solid #4b5563;
+      border: 1px solid #9ca3af;
       background: transparent;
       padding: 0.4rem 0.8rem;
       font-size: 0.8rem;
@@ -836,8 +827,8 @@
       cursor: pointer;
     }
 
-    body[data-theme="light"] .onboarding-close {
-      border-color: #9ca3af;
+    body[data-theme="dark"] .onboarding-close {
+      border-color: #4b5563;
     }
 
     .onboarding-close:focus-visible {
@@ -852,6 +843,42 @@
       text-align: justify;
     }
 
+    /* Botão flutuante "Como usar" */
+
+    .floating-help {
+      position: fixed;
+      right: 1rem;
+      bottom: 4.5rem;
+      z-index: 25;
+      border-radius: 999px;
+      border: 1px solid #9ca3af;
+      background: #ffffff;
+      color: #111827;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    .floating-help span.icon {
+      font-size: 1rem;
+    }
+
+    body[data-theme="dark"] .floating-help {
+      background: #020617;
+      color: #e5e7eb;
+      border-color: #4b5563;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    .floating-help:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
     /* ------------------------------------------------------------------
        Rodapé – centrado e simétrico
        ------------------------------------------------------------------ */
@@ -861,14 +888,14 @@
       padding: 0.6rem 1rem 0.8rem;
       font-size: 0.78rem;
       color: var(--text-soft);
-      border-top: 1px solid #111827;
-      background: radial-gradient(circle at top, rgba(15,23,42,0.9) 0, #020617 50%, #000 100%);
+      border-top: 1px solid #e5e7eb;
+      background: linear-gradient(to right, #f9fafb 0, #ffffff 40%, #f9fafb 100%);
     }
 
-    body[data-theme="light"] .app-footer {
-      border-top-color: #e5e7eb;
-      background: linear-gradient(to right, #f9fafb 0, #ffffff 40%, #f9fafb 100%);
-      color: #4b5563;
+    body[data-theme="dark"] .app-footer {
+      border-top-color: #111827;
+      background: radial-gradient(circle at top, rgba(15,23,42,0.9) 0, #020617 50%, #000 100%);
+      color: #9ca3af;
     }
 
     .footer-inner {
@@ -916,11 +943,11 @@
       }
 
       .wheel-wrapper {
-        max-width: 380px;
+        max-width: 420px;
       }
 
       .emotion-wheel {
-        max-width: 380px;
+        max-width: 420px;
       }
 
       .form-row-inline {
@@ -966,7 +993,7 @@
 
     @media (max-width: 480px) {
       .wheel-label {
-        font-size: 13px;
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -1022,7 +1049,7 @@
           aria-label="Roda das Emoções de Plutchik com intensidades e combinações">
         </svg>
         <p class="wheel-help">
-          Clique ou use Tab + Enter em qualquer pétala para explorar a emoção e registrar sua experiência.
+          Clique ou use Tab + Enter em qualquer setor para explorar a emoção e registrar sua experiência.
         </p>
       </div>
     </section>
@@ -1061,8 +1088,8 @@
 
         <div class="form-row-inline">
           <div class="form-group">
-            <label for="selectedEmotion" class="form-label">Emoção selecionada</label>
-            <input id="selectedEmotion" class="form-input" type="text" placeholder="Clique em uma pétala na roda (pode editar o nome se desejar)">
+            <label for="selectedEmotion" class="form-label">Emoção selecionada *</label>
+            <input id="selectedEmotion" class="form-input" type="text" placeholder="Clique em um setor na roda (pode editar o nome se desejar)">
             <p class="helper-text">Você pode ajustar o nome para ficar mais parecido com sua experiência.</p>
           </div>
           <div class="form-group">
@@ -1216,12 +1243,12 @@
         Esta ferramenta foi pensada para que você se sinta acolhido ao olhar para suas emoções, com clareza e sem julgamentos.
       </p>
       <ol class="onboarding-steps">
-        <li><strong>Escolha uma emoção na roda.</strong> Toque em uma pétala que pareça combinar com o que você está sentindo agora.</li>
+        <li><strong>Escolha uma emoção na roda.</strong> Toque em um setor que pareça combinar com o que você está sentindo agora.</li>
         <li><strong>Leia a explicação da emoção e veja como ela funciona em você.</strong> Observe a definição, a função e os principais riscos.</li>
         <li><strong>Registre a situação.</strong> Anote o contexto, gatilhos e como reagiu, para conversar em sessão ou compartilhar com alguém de confiança.</li>
       </ol>
       <p class="onboarding-note">
-        Você pode reabrir estas orientações sempre que quiser clicando em *Como usar* no topo da página.
+        Você pode reabrir estas orientações sempre que quiser clicando em *Como usar* no topo da página ou no botão flutuante.
       </p>
       <div class="onboarding-actions">
         <button type="button" class="onboarding-close" id="onboardingCloseButton">
@@ -1233,6 +1260,12 @@
       </div>
     </section>
   </div>
+
+  <!-- Botão flutuante "Como usar" -->
+  <button type="button" class="floating-help" id="floatingOnboardingButton" aria-label="Como usar a Roda das Emoções">
+    <span class="icon">❔</span>
+    <span>Como usar</span>
+  </button>
 
   <footer class="app-footer">
     <div class="footer-inner">
@@ -1258,56 +1291,56 @@
        ------------------------------------------------------------------ */
 
     const PRIMARIES = [
-      { key: "joy", label: "Alegria", angle: -90,    colors: "#ffd54a" },
-      { key: "trust", label: "Confiança", angle: -45, colors: "#b7f96a" },
-      { key: "fear", label: "Medo", angle: 0,        colors: "#4caf50" },
-      { key: "surprise", label: "Surpresa", angle: 45,  colors: "#4fc3f7" },
-      { key: "sadness", label: "Tristeza", angle: 90,   colors: "#5c6bc0" },
-      { key: "disgust", label: "Nojo", angle: 135,   colors: "#ba68c8" },
-      { key: "anger", label: "Raiva", angle: 180,   colors: "#ff5252" },
-      { key: "anticipation", label: "Antecipação", angle: 225, colors: "#ff9800" }
+      { key: "joy",          label: "Alegria",      angle: -90,  colors: "#ffd54a" },
+      { key: "trust",        label: "Confiança",    angle: -45,  colors: "#b7f96a" },
+      { key: "fear",         label: "Medo",         angle: 0,    colors: "#4caf50" },
+      { key: "surprise",     label: "Surpresa",     angle: 45,   colors: "#4fc3f7" },
+      { key: "sadness",      label: "Tristeza",     angle: 90,   colors: "#5c6bc0" },
+      { key: "disgust",      label: "Nojo",         angle: 135,  colors: "#ba68c8" },
+      { key: "anger",        label: "Raiva",        angle: 180,  colors: "#ff5252" },
+      { key: "anticipation", label: "Antecipação",  angle: 225,  colors: "#ff9800" }
     ];
 
     const INTENSITY_CONFIG = {
       joy: [
-        { code: "joy_high",   label: "Êxtase",      ring: "high" },
-        { code: "joy_mid",    label: "Alegria",     ring: "mid" },
-        { code: "joy_low",    label: "Serenidade",  ring: "low" }
+        { code: "joy_low",   label: "Serenidade",  ring: "low" },
+        { code: "joy_mid",   label: "Alegria",     ring: "mid" },
+        { code: "joy_high",  label: "Êxtase",      ring: "high" }
       ],
       trust: [
-        { code: "trust_high", label: "Admiração",   ring: "high" },
+        { code: "trust_low",  label: "Aprovação",   ring: "low" },
         { code: "trust_mid",  label: "Confiança",   ring: "mid" },
-        { code: "trust_low",  label: "Aprovação",   ring: "low" }
+        { code: "trust_high", label: "Admiração",   ring: "high" }
       ],
       fear: [
-        { code: "fear_high",  label: "Terror",      ring: "high" },
-        { code: "fear_mid",   label: "Medo",        ring: "mid" },
-        { code: "fear_low",   label: "Apreensão",   ring: "low" }
+        { code: "fear_low",  label: "Apreensão",   ring: "low" },
+        { code: "fear_mid",  label: "Medo",        ring: "mid" },
+        { code: "fear_high", label: "Terror",      ring: "high" }
       ],
       surprise: [
-        { code: "surprise_high", label: "Assombro",    ring: "high" },
-        { code: "surprise_mid",  label: "Surpresa",    ring: "mid" },
-        { code: "surprise_low",  label: "Distração",   ring: "low" }
+        { code: "surprise_low",  label: "Distração", ring: "low" },
+        { code: "surprise_mid",  label: "Surpresa",  ring: "mid" },
+        { code: "surprise_high", label: "Assombro",  ring: "high" }
       ],
       sadness: [
-        { code: "sadness_high",  label: "Angústia",    ring: "high" },
-        { code: "sadness_mid",   label: "Tristeza",    ring: "mid" },
-        { code: "sadness_low",   label: "Tédio",       ring: "low" }
+        { code: "sadness_low",  label: "Tédio",     ring: "low" },
+        { code: "sadness_mid",  label: "Tristeza",  ring: "mid" },
+        { code: "sadness_high", label: "Angústia",  ring: "high" }
       ],
       disgust: [
-        { code: "disgust_high",  label: "Repugnância", ring: "high" },
-        { code: "disgust_mid",   label: "Nojo",        ring: "mid" },
-        { code: "disgust_low",   label: "Aborrecimento", ring: "low" }
+        { code: "disgust_low",  label: "Aborrecimento", ring: "low" },
+        { code: "disgust_mid",  label: "Nojo",          ring: "mid" },
+        { code: "disgust_high", label: "Repugnância",   ring: "high" }
       ],
       anger: [
-        { code: "anger_high",    label: "Ira",         ring: "high" },
-        { code: "anger_mid",     label: "Raiva",       ring: "mid" },
-        { code: "anger_low",     label: "Irritação",   ring: "low" }
+        { code: "anger_low",  label: "Irritação",   ring: "low" },
+        { code: "anger_mid",  label: "Raiva",       ring: "mid" },
+        { code: "anger_high", label: "Ira",         ring: "high" }
       ],
       anticipation: [
-        { code: "anticipation_high", label: "Vigilância",  ring: "high" },
-        { code: "anticipation_mid",  label: "Antecipação", ring: "mid" },
-        { code: "anticipation_low",  label: "Interesse",   ring: "low" }
+        { code: "anticipation_low",  label: "Interesse",     ring: "low" },
+        { code: "anticipation_mid",  label: "Antecipação",   ring: "mid" },
+        { code: "anticipation_high", label: "Vigilância",    ring: "high" }
       ]
     };
 
@@ -1334,7 +1367,7 @@
     };
 
     /* ------------------------------------------------------------------
-       Psicoeducação – INFO_MAP
+       Psicoeducação – INFO_MAP (mantido do modelo anterior)
        ------------------------------------------------------------------ */
 
     const INFO_MAP = {
@@ -2121,11 +2154,11 @@
        Utilidades
        ------------------------------------------------------------------ */
 
-    function shadeColor(hex, percent) {
+    function shadeColor(hex, delta) {
       let num = parseInt(hex.replace("#", ""), 16);
-      let r = (num >> 16) + percent;
-      let g = ((num >> 8) & 0x00FF) + percent;
-      let b = (num & 0x0000FF) + percent;
+      let r = (num >> 16) + delta;
+      let g = ((num >> 8) & 0x00FF) + delta;
+      let b = (num & 0x0000FF) + delta;
       r = Math.max(Math.min(255, r), 0);
       g = Math.max(Math.min(255, g), 0);
       b = Math.max(Math.min(255, b), 0);
@@ -2143,7 +2176,7 @@
     }
 
     /* ------------------------------------------------------------------
-       Desenho da roda em SVG
+       Desenho da roda em SVG – Mapa Circular Expandido em Anel Duplo
        ------------------------------------------------------------------ */
 
     function buildWheel() {
@@ -2152,12 +2185,12 @@
 
       const centerX = 0;
       const centerY = 0;
-      const stepAngle = 45;
-      const innerR = 32;
-      const midR = 75;
-      const outerR = 118;
-      const diadInnerR = 135;
-      const diadOuterR = 160;
+      const stepAngle = 45;     // 360 / 8
+      const innerR = 40;        // anel interno (baixa intensidade)
+      const midR = 90;          // anel intermediário (média)
+      const outerR = 140;       // anel externo (alta)
+      const diadInnerR = 148;   // anel das diades
+      const diadOuterR = 178;
 
       const degToRad = (deg) => (deg * Math.PI) / 180;
 
@@ -2217,33 +2250,33 @@
 
       const allSegments = {};
 
-      // Pétalas de intensidade
+      // Anéis concêntricos de intensidade (interno=baixo, intermediário=médio, externo=alto)
       PRIMARIES.forEach((primary) => {
         const baseAngle = primary.angle;
-        const width = stepAngle * 0.80;
+        const width = stepAngle * 0.8;
         const start = baseAngle - width / 2;
         const end = baseAngle + width / 2;
         const baseColor = primary.colors;
-
         const intensities = INTENSITY_CONFIG[primary.key];
 
         intensities.forEach((item) => {
           let rin, rout, delta;
-          if (item.ring === "high") {
+          if (item.ring === "low") {
             rin = innerR;
             rout = (innerR + midR) / 2;
-            delta = -25;
+            delta = -20;
           } else if (item.ring === "mid") {
             rin = (innerR + midR) / 2;
             rout = (midR + outerR) / 2;
             delta = 0;
-          } else {
+          } else { // high
             rin = (midR + outerR) / 2;
             rout = outerR;
             delta = 20;
           }
 
           const fillColor = shadeColor(baseColor, delta);
+
           const seg = createWedge(
             rin,
             rout,
@@ -2255,7 +2288,7 @@
               type: "primary",
               primary: primary.key,
               ring: item.ring,
-              ariaLabel: item.label + " (" + PRIMARY_LABELS[primary.key] + ")"
+              ariaLabel: `${item.label} (${PRIMARY_LABELS[primary.key]}, intensidade ${item.ring === "low" ? "baixa" : item.ring === "mid" ? "média" : "alta"})`
             }
           );
           allSegments[item.code] = seg;
@@ -2267,21 +2300,21 @@
 
           const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
           text.setAttribute("x", lx);
-          text.setAttribute("y", ly + 2);
+          text.setAttribute("y", ly + 3);
           text.setAttribute("class", "wheel-label");
           text.textContent = item.label.toLowerCase();
           svg.appendChild(text);
         });
       });
 
-      // Diades
+      // Diades – anel externo
       DIADS.forEach((diad, index) => {
         const primary = PRIMARIES[index];
         const baseAngle = primary.angle + stepAngle / 2;
         const width = stepAngle * 0.55;
         const start = baseAngle - width / 2;
         const end = baseAngle + width / 2;
-        const baseColor = PRIMARIES[index].colors;
+        const baseColor = primary.colors;
         const fillColor = shadeColor(baseColor, 25);
 
         const seg = createWedge(
@@ -2295,7 +2328,7 @@
             type: "diad",
             primary: diad.primaryA,
             ring: "diad",
-            ariaLabel: diad.label
+            ariaLabel: `Diade ${diad.label}`
           }
         );
         allSegments[diad.code] = seg;
@@ -2307,7 +2340,7 @@
 
         const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
         text.setAttribute("x", lx);
-        text.setAttribute("y", ly + 2);
+        text.setAttribute("y", ly + 3);
         text.setAttribute("class", "wheel-label");
         text.textContent = diad.label.toLowerCase();
         svg.appendChild(text);
@@ -2367,7 +2400,7 @@
     }
 
     /* ------------------------------------------------------------------
-       Detalhes
+       Detalhes psicoeducativos
        ------------------------------------------------------------------ */
 
     function handleEmotionSelection(code) {
@@ -2476,8 +2509,8 @@
 
     function buildChart() {
       const canvas = document.getElementById("emotionChart");
+      if (!canvas) return;
       const ctx = canvas.getContext("2d");
-
       const labels = [
         "Alegria",
         "Confiança",
@@ -2488,7 +2521,6 @@
         "Raiva",
         "Antecipação"
       ];
-
       const styles = getComputedStyle(document.body);
       const textColor = styles.getPropertyValue("--text-main").trim() || "#111827";
 
@@ -2599,6 +2631,12 @@
       const triggers = document.getElementById("triggersInput").value.trim();
       const behaviors = document.getElementById("behaviorsInput").value.trim();
       const desired = document.getElementById("desiredInput").value.trim();
+      const emotionLabelInput = document.getElementById("selectedEmotion").value.trim();
+
+      if (!emotionLabelInput) {
+        showFeedback("Digite ou selecione uma emoção para que o registro faça sentido.", "error");
+        return;
+      }
 
       if (!context) {
         showFeedback("Para que o registro seja útil, descreva um pouco o contexto da emoção.", "error");
@@ -2606,7 +2644,6 @@
       }
 
       const now = new Date();
-      const emotionLabelInput = document.getElementById("selectedEmotion").value.trim();
       const emotionLabel = emotionLabelInput || info.displayName;
 
       const record = {
@@ -2639,10 +2676,10 @@
     }
 
     /* ------------------------------------------------------------------
-       PDF
+       PDF – jsPDF + autoTable
        ------------------------------------------------------------------ */
 
-    async function handleDownloadPdf() {
+    function handleDownloadPdf() {
       if (!currentEmotionCode || !INFO_MAP[currentEmotionCode]) {
         alert("Selecione uma emoção na roda antes de gerar o PDF.");
         return;
@@ -2787,13 +2824,16 @@
       doc.setFontSize(9);
       doc.setFont("helvetica", "italic");
       const footerText = "Richelmy Murta – Psicólogo Clínico. Ferramenta psicoeducativa baseada na Roda das Emoções de Plutchik.";
-      doc.text(footerText, margin, 297 - 10);
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const textWidth = doc.getTextWidth(footerText);
+      const xFooter = (pageWidth - textWidth) / 2;
+      doc.text(footerText, xFooter, 287);
 
       doc.save("registro-emocional-plutchik.pdf");
     }
 
     /* ------------------------------------------------------------------
-       WhatsApp
+       WhatsApp – resumo ao psicólogo e compartilhamento da página
        ------------------------------------------------------------------ */
 
     function handleSendWhatsapp() {
@@ -2810,74 +2850,77 @@
       const age = document.getElementById("patientAge").value.trim();
       const recordDate = document.getElementById("recordDate").value;
       const context = document.getElementById("contextInput").value.trim();
-      const now = new Date();
 
-      const dateLabel = recordDate
+      const now = new Date();
+      const dateRefLabel = recordDate
         ? recordDate.split("-").reverse().join("/")
         : formatDateTime(now).split(" ")[0];
 
-      const shortContext = truncate(context || "", 200);
+      const lines = [
+        name ? `Paciente: ${name}` : "Paciente: (não informado)",
+        age ? `Idade: ${age} anos` : "Idade: (não informada)",
+        `Data de referência do registro: ${dateRefLabel}`,
+        "",
+        `Emoção selecionada: ${emotionLabel}`,
+        `Intensidade percebida: ${userIntensity}`,
+        context ? `Resumo do contexto: ${truncate(context, 400)}` : "Resumo do contexto: (não preenchido)",
+        "",
+        "Mensagem gerada pela ferramenta clínica \"Roda das Emoções de Plutchik – Psicoeducação Emocional\"."
+      ];
 
-      const textPlain =
-        "Registro emocional – Roda de Plutchik\n" +
-        "Paciente: " + (name || "-") + (age ? " (" + age + " anos)" : "") + "\n" +
-        "Data de referência: " + dateLabel + "\n" +
-        "Emoção: " + emotionLabel + "\n" +
-        "Intensidade percebida: " + userIntensity + "\n" +
-        "Resumo do contexto: " + (shortContext || "-") + "\n\n" +
-        "Mensagem gerada pela ferramenta clínica de psicoeducação emocional e registro de emoções.";
-
-      // Substitua o número abaixo pelo número do psicólogo, se desejar
-      const url = "https://wa.me/5535984640729?text=" + encodeURIComponent(textPlain);
+      const text = encodeURIComponent(lines.join("\n"));
+      const url = "https://wa.me/?text=" + text;
       window.open(url, "_blank");
     }
 
-    function handleSharePageWhatsapp() {
-      const pageUrl = "https://ricmurtapsicologia.github.io/rodaemo-oes/";
-      const textPlain =
-        "Estou usando uma ferramenta gratuita de psicoeducação emocional baseada na Roda das Emoções de Plutchik para registrar emoções, contextos e respostas.\n\n" +
-        "Ela ajuda a identificar sentimentos, entender a função das emoções e organizar registros para conversar em terapia.\n\n" +
-        "Você pode acessar a ferramenta aqui: " + pageUrl;
+    function handleSharePage() {
+      const messageLines = [
+        "Conheci esta ferramenta clínica baseada na *Roda das Emoções de Plutchik*.",
+        "",
+        "Ela ajuda na *psicoeducação emocional* e no *registro clínico de emoções*, com explicações simples e espaço para anotar contexto, gatilhos e como você reagiu.",
+        "",
+        "Você pode acessar aqui:",
+        "https://seu-dominio-aqui.com",
+        "",
+        "Lembrete: o WhatsApp não substitui atendimentos de emergência, e esta ferramenta é complementar à terapia profissional."
+      ];
 
-      const url = "https://wa.me/?text=" + encodeURIComponent(textPlain);
+      const text = encodeURIComponent(messageLines.join("\n"));
+      const url = "https://wa.me/?text=" + text;
       window.open(url, "_blank");
+    }
+
+    /* ------------------------------------------------------------------
+       Limpar histórico
+       ------------------------------------------------------------------ */
+
+    function handleClearHistory() {
+      if (!confirm("Tem certeza de que deseja apagar todos os registros deste dispositivo?")) return;
+      saveRecords([]);
+      renderHistory();
+      updateChart();
     }
 
     /* ------------------------------------------------------------------
        Tema claro/escuro
        ------------------------------------------------------------------ */
 
-    function applyTheme(theme) {
+    function setTheme(theme) {
       const body = document.body;
       const icon = document.getElementById("themeIcon");
       const label = document.getElementById("themeLabel");
 
+      body.setAttribute("data-theme", theme);
+
       if (theme === "light") {
-        body.dataset.theme = "light";
-        if (icon) icon.textContent = "☀️";
-        if (label) label.textContent = "Tema claro";
+        icon.textContent = "☀️";
+        label.textContent = "Tema claro";
       } else {
-        body.dataset.theme = "dark";
-        if (icon) icon.textContent = "🌙";
-        if (label) label.textContent = "Tema escuro";
+        icon.textContent = "🌙";
+        label.textContent = "Tema escuro";
       }
 
-      // Opcional: manter registro, mas sempre iniciar em claro
-      localStorage.setItem("plutchik_theme", theme);
       updateChartColors();
-    }
-
-    function initTheme() {
-      // Requisito: sempre iniciar em modo claro, ignorando o último estado salvo
-      applyTheme("light");
-
-      const btn = document.getElementById("themeToggle");
-      if (btn) {
-        btn.addEventListener("click", () => {
-          const next = document.body.dataset.theme === "light" ? "dark" : "light";
-          applyTheme(next);
-        });
-      }
     }
 
     /* ------------------------------------------------------------------
@@ -2889,9 +2932,7 @@
       if (!modal) return;
       modal.hidden = false;
       const startBtn = document.getElementById("onboardingStartButton");
-      if (startBtn) {
-        startBtn.focus();
-      }
+      if (startBtn) startBtn.focus();
     }
 
     function closeOnboarding() {
@@ -2900,76 +2941,80 @@
       modal.hidden = true;
     }
 
-    function initOnboarding() {
-      const openBtn = document.getElementById("openOnboardingButton");
-      const closeBtn = document.getElementById("onboardingCloseButton");
-      const startBtn = document.getElementById("onboardingStartButton");
-      const modal = document.getElementById("onboardingModal");
-
-      if (openBtn) {
-        openBtn.addEventListener("click", () => {
-          openOnboarding();
-        });
-      }
-
-      if (closeBtn) {
-        closeBtn.addEventListener("click", () => closeOnboarding());
-      }
-
-      if (startBtn) {
-        startBtn.addEventListener("click", () => closeOnboarding());
-      }
-
-      if (modal) {
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) {
-            closeOnboarding();
-          }
-        });
-
-        document.addEventListener("keydown", (event) => {
-          if (!modal.hidden && event.key === "Escape") {
-            closeOnboarding();
-          }
-        });
-      }
-
-      // Onboarding deve aparecer sempre ao carregar a página
-      openOnboarding();
-    }
-
     /* ------------------------------------------------------------------
        Inicialização
        ------------------------------------------------------------------ */
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const today = new Date();
-      const isoToday = today.toISOString().slice(0, 10);
+    function init() {
+      // Tema inicial: claro
+      setTheme("light");
+
+      // Preencher data de referência com hoje
       const recordDateInput = document.getElementById("recordDate");
-      if (recordDateInput) {
-        recordDateInput.value = isoToday;
+      if (recordDateInput && !recordDateInput.value) {
+        const today = new Date();
+        const pad = (n) => String(n).padStart(2, "0");
+        recordDateInput.value = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
       }
 
-      initTheme();
       buildWheel();
       renderHistory();
       buildChart();
-      initOnboarding();
 
-      document.getElementById("emotionForm").addEventListener("submit", handleFormSubmit);
-      document.getElementById("downloadPdfButton").addEventListener("click", handleDownloadPdf);
-      document.getElementById("sendWhatsappButton").addEventListener("click", handleSendWhatsapp);
-      document.getElementById("sharePageButton").addEventListener("click", handleSharePageWhatsapp);
+      const form = document.getElementById("emotionForm");
+      if (form) form.addEventListener("submit", handleFormSubmit);
 
-      document.getElementById("clearHistoryButton").addEventListener("click", () => {
-        if (confirm("Deseja realmente apagar todo o histórico deste navegador?")) {
-          saveRecords([]);
-          renderHistory();
-          updateChart();
-          showFeedback("Histórico apagado deste dispositivo.", "success");
+      const pdfButton = document.getElementById("downloadPdfButton");
+      if (pdfButton) pdfButton.addEventListener("click", handleDownloadPdf);
+
+      const whatsappButton = document.getElementById("sendWhatsappButton");
+      if (whatsappButton) whatsappButton.addEventListener("click", handleSendWhatsapp);
+
+      const sharePageButton = document.getElementById("sharePageButton");
+      if (sharePageButton) sharePageButton.addEventListener("click", handleSharePage);
+
+      const clearHistoryButton = document.getElementById("clearHistoryButton");
+      if (clearHistoryButton) clearHistoryButton.addEventListener("click", handleClearHistory);
+
+      const themeToggle = document.getElementById("themeToggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const current = document.body.getAttribute("data-theme") || "light";
+          const next = current === "light" ? "dark" : "light";
+          setTheme(next);
+        });
+      }
+
+      // Onboarding – abre sempre ao carregar
+      const onboardingCloseButton = document.getElementById("onboardingCloseButton");
+      const onboardingStartButton = document.getElementById("onboardingStartButton");
+      const openOnboardingButton = document.getElementById("openOnboardingButton");
+      const floatingOnboardingButton = document.getElementById("floatingOnboardingButton");
+
+      openOnboarding();
+
+      if (onboardingCloseButton) {
+        onboardingCloseButton.addEventListener("click", closeOnboarding);
+      }
+      if (onboardingStartButton) {
+        onboardingStartButton.addEventListener("click", closeOnboarding);
+      }
+      if (openOnboardingButton) {
+        openOnboardingButton.addEventListener("click", openOnboarding);
+      }
+      if (floatingOnboardingButton) {
+        floatingOnboardingButton.addEventListener("click", openOnboarding);
+      }
+
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key === "Escape") {
+          closeOnboarding();
         }
       });
-    });
+    }
+
+    window.addEventListener("load", init);
   </script>
 </body>
 </html>
+
