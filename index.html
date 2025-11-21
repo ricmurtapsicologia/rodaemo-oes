@@ -76,7 +76,7 @@
       --stroke-wheel: #020617;
     }
 
-    /* Tema claro – sobrescreve variáveis */
+    /* Tema claro – sobrescreve variáveis (contraste mais forte) */
     body[data-theme="light"] {
       color-scheme: light;
       --bg: #f3f4f6;
@@ -84,8 +84,8 @@
       --bg-card: #ffffff;
       --border-subtle: #d1d5db;
       --text-main: #111827;
-      --text-muted: #4b5563;
-      --text-soft: #6b7280;
+      --text-muted: #374151;
+      --text-soft: #4b5563;
       --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.18);
       --accent-soft: rgba(249, 115, 22, 0.15);
       --stroke-wheel: #111827;
@@ -151,7 +151,7 @@
 
     .app-title {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
     }
 
@@ -159,6 +159,7 @@
       margin: 0.35rem 0 0;
       font-size: 0.9rem;
       color: var(--text-muted);
+      max-width: 540px;
     }
 
     .nav-links {
@@ -169,6 +170,8 @@
       padding: 0;
       font-size: 0.85rem;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a {
@@ -229,10 +232,10 @@
 
     .layout {
       max-width: 1200px;
-      margin: 1.2rem auto 1.5rem;
+      margin: 1.2rem auto 1.8rem;
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.75fr);
       grid-template-rows: auto auto;
       gap: 1.3rem;
     }
@@ -242,7 +245,7 @@
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-soft);
-      padding: 1rem 1.1rem 1.1rem;
+      padding: 1.1rem 1.2rem 1.2rem;
       min-height: 0;
     }
 
@@ -264,7 +267,7 @@
 
     .section-title {
       margin: 0 0 0.15rem;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 600;
     }
 
@@ -280,19 +283,23 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding: 0.4rem 0 0.7rem;
+      max-width: 540px;
+      margin: 0 auto;
     }
 
     .emotion-wheel {
       width: 100%;
-      max-width: 380px;
+      max-width: 520px;
       height: auto;
       display: block;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
     .wheel-help {
       margin: 0;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--text-soft);
       text-align: center;
     }
@@ -317,7 +324,8 @@
     }
 
     .wheel-label {
-      font-size: 6px;
+      font-size: 8px;
+      font-weight: 600;
       fill: var(--stroke-wheel);
       text-anchor: middle;
       pointer-events: none;
@@ -353,20 +361,20 @@
     }
 
     .details-emotion-name {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 600;
       margin: 0 0 0.3rem;
     }
 
     .details-emotion-meta {
       margin: 0 0 0.3rem;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--text-soft);
     }
 
     .details-block {
       margin: 0.25rem 0;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--text-main);
     }
 
@@ -656,23 +664,66 @@
       padding-left: 1rem;
     }
 
-    /* Rodapé da página */
+    /* Rodapé da página – mais “plataforma clínica” */
 
     .app-footer {
       margin-top: auto;
-      border-top: 1px solid #111827;
-      padding: 0.7rem 1.5rem 1.1rem;
+      padding: 0.9rem 1.5rem 1.1rem;
       font-size: 0.8rem;
       color: var(--text-soft);
-      text-align: center;
+      border-top: 1px solid #111827;
+      background: radial-gradient(circle at top, rgba(15,23,42,0.9) 0, #020617 50%, #000 100%);
     }
 
     body[data-theme="light"] .app-footer {
       border-top-color: #e5e7eb;
+      background: linear-gradient(to right, #f9fafb 0, #ffffff 40%, #f9fafb 100%);
+      color: #4b5563;
     }
 
-    .app-footer strong {
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      text-align: left;
+    }
+
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .footer-main strong {
       font-weight: 600;
+    }
+
+    .footer-tagline {
+      font-size: 0.78rem;
+      opacity: 0.9;
+    }
+
+    .footer-badge {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    body[data-theme="light"] .footer-badge {
+      background: #fff7ed;
+      color: #9a3412;
+      border-color: #fed7aa;
     }
 
     /* Acessibilidade */
@@ -705,10 +756,15 @@
 
       .nav-links {
         margin-top: 0.4rem;
+        justify-content: flex-start;
       }
 
       .charts-wrapper {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      .wheel-wrapper {
+        max-width: 520px;
       }
     }
 
@@ -727,6 +783,28 @@
 
       .panel {
         padding: 0.9rem;
+      }
+
+      .app-title {
+        font-size: 1.35rem;
+      }
+
+      .app-subtitle {
+        font-size: 0.86rem;
+      }
+
+      .header-inner {
+        gap: 0.5rem;
+      }
+
+      .wheel-label {
+        font-size: 9px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
       }
     }
   </style>
@@ -951,10 +1029,24 @@
   </main>
 
   <footer class="app-footer">
-    <p>
-      <strong>Richelmy Murta – Psicólogo Clínico</strong> • Ferramenta psicoeducativa baseada na Roda das Emoções de Plutchik.
-      Uso clínico e educativo responsável. © <span id="footerYear"></span>.
-    </p>
+    <div class="footer-inner">
+      <div class="footer-main">
+        <p>
+          <strong>Richelmy Murta – Psicólogo Clínico</strong>
+        </p>
+        <p class="footer-tagline">
+          Ferramenta de psicoeducação baseada na Roda das Emoções de Plutchik. Uso clínico e educativo responsável.
+        </p>
+        <p class="footer-tagline">
+          © <span id="footerYear"></span>. Registros armazenados apenas neste dispositivo.
+        </p>
+      </div>
+      <div>
+        <span class="footer-badge">
+          🧠 Treino de habilidades emocionais
+        </span>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -1018,23 +1110,13 @@
       ]
     };
 
-    // Diades na ordem dos pares adjacentes: (0-1), (1-2)... (7-0)
-    // Mapeamento clínico (Plutchik):
-    // Amor = Alegria + Confiança
-    // Submissão = Confiança + Medo
-    // Intimidação = Medo + Surpresa
-    // Desaprovação = Surpresa + Tristeza
-    // Remorso = Tristeza + Nojo
-    // Menosprezo (contempt) = Nojo + Raiva
-    // Agressividade = Raiva + Antecipação
-    // Otimismo = Antecipação + Alegria
     const DIADS = [
       { code: "diad_love",         label: "Amor",          primaryA: "joy",         primaryB: "trust" },
       { code: "diad_submission",   label: "Submissão",     primaryA: "trust",       primaryB: "fear" },
       { code: "diad_intimidation", label: "Intimidação",   primaryA: "fear",        primaryB: "surprise" },
       { code: "diad_disapproval",  label: "Desaprovação",  primaryA: "surprise",    primaryB: "sadness" },
       { code: "diad_remorse",      label: "Remorso",       primaryA: "sadness",     primaryB: "disgust" },
-      { code: "diad_contempt",     label: "Menosprezo",    primaryA: "disgust",     primaryB: "anger" }, // Aqui seguimos Plutchik: Nojo + Raiva
+      { code: "diad_contempt",     label: "Menosprezo",    primaryA: "disgust",     primaryB: "anger" },
       { code: "diad_aggressivity", label: "Agressividade", primaryA: "anger",       primaryB: "anticipation" },
       { code: "diad_optimism",     label: "Otimismo",      primaryA: "anticipation", primaryB: "joy" }
     ];
@@ -1052,7 +1134,6 @@
 
     /* ------------------------------------------------------------------
        Psicoeducação – INFO_MAP
-       Cada item tem definição, função, situações, riscos, estratégias, reflexões.
        ------------------------------------------------------------------ */
 
     const INFO_MAP = {
@@ -1840,7 +1921,6 @@
        ------------------------------------------------------------------ */
 
     function shadeColor(hex, percent) {
-      // Ajuste simples de luminosidade (% negativo escurece, positivo clareia)
       let num = parseInt(hex.replace("#", ""), 16);
       let r = (num >> 16) + percent;
       let g = ((num >> 8) & 0x00FF) + percent;
@@ -1862,7 +1942,7 @@
     }
 
     /* ------------------------------------------------------------------
-       Desenho da roda em SVG (flor em 3 anéis + diades)
+       Desenho da roda em SVG
        ------------------------------------------------------------------ */
 
     function buildWheel() {
@@ -1871,7 +1951,7 @@
 
       const centerX = 0;
       const centerY = 0;
-      const stepAngle = 45; // 8 emoções
+      const stepAngle = 45;
       const innerR = 35;
       const midR = 80;
       const outerR = 125;
@@ -1916,7 +1996,6 @@
         path.setAttribute("aria-label", options.ariaLabel || "");
         svg.appendChild(path);
 
-        // Eventos de interação (clique e teclado)
         path.addEventListener("click", () => handleEmotionSelection(options.code));
         path.addEventListener("keydown", (ev) => {
           if (ev.key === "Enter" || ev.key === " ") {
@@ -1928,7 +2007,6 @@
         return { path, startDeg, endDeg, rInner, rOuter };
       }
 
-      // Círculo pontilhado das diades
       const dotted = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       dotted.setAttribute("cx", centerX);
       dotted.setAttribute("cy", centerY);
@@ -1938,7 +2016,7 @@
 
       const allSegments = {};
 
-      // Pétalas de intensidade (alta, média, baixa)
+      // Pétalas de intensidade
       PRIMARIES.forEach((primary) => {
         const baseAngle = primary.angle;
         const width = stepAngle * 0.80;
@@ -1981,7 +2059,6 @@
           );
           allSegments[item.code] = seg;
 
-          // Rótulo aproximado no centro da pétala
           const labelAngle = baseAngle;
           const labelRadius = (rin + rout) / 2;
           const lx = centerX + labelRadius * Math.cos(degToRad(labelAngle));
@@ -1996,7 +2073,7 @@
         });
       });
 
-      // Diades na borda pontilhada (pétalas externas)
+      // Diades
       DIADS.forEach((diad, index) => {
         const primary = PRIMARIES[index];
         const baseAngle = primary.angle + stepAngle / 2;
@@ -2035,12 +2112,11 @@
         svg.appendChild(text);
       });
 
-      // Guarda para highlight posterior
       window._wheelSegments = allSegments;
     }
 
     /* ------------------------------------------------------------------
-       Estado global simples
+       Estado
        ------------------------------------------------------------------ */
 
     let currentEmotionCode = null;
@@ -2063,7 +2139,7 @@
     }
 
     /* ------------------------------------------------------------------
-       Renderização do painel de detalhes
+       Detalhes
        ------------------------------------------------------------------ */
 
     function handleEmotionSelection(code) {
@@ -2072,7 +2148,6 @@
 
       currentEmotionCode = code;
 
-      // Highlight na roda
       if (window._wheelSegments) {
         Object.values(window._wheelSegments).forEach(obj => obj.path.classList.remove("highlight"));
         const seg = window._wheelSegments[code];
@@ -2118,7 +2193,6 @@
         ${createList(info.reflections)}
       `;
 
-      // Atualizar campo de emoção selecionada (ainda editável)
       const emotionInput = document.getElementById("selectedEmotion");
       let label = info.displayName;
       if (info.type === "primary" && primaryLabel) {
@@ -2237,12 +2311,8 @@
 
       records.forEach((rec) => {
         if (rec.type === "primary" && rec.primaryKey) {
-          // Emoção primária conta 1 ponto
           counts[rec.primaryKey] = (counts[rec.primaryKey] || 0) + 1;
         } else if (rec.type === "diad" && rec.primaries) {
-          // DIADES: cada combinação (ex.: Amor, Otimismo, Agressividade etc.)
-          // conta 0,5 ponto para cada emoção básica componente.
-          // Ex.: Amor = Alegria + Confiança (0,5 para cada).
           rec.primaries.forEach((p) => {
             counts[p] = (counts[p] || 0) + 0.5;
           });
@@ -2263,7 +2333,7 @@
     }
 
     /* ------------------------------------------------------------------
-       Registro de emoção
+       Registro
        ------------------------------------------------------------------ */
 
     function handleFormSubmit(event) {
@@ -2289,21 +2359,21 @@
 
       const record = {
         id: now.getTime(),
-        createdAt: now.toISOString(),                  // Data/hora de registro
-        patientName: name,                             // Nome do paciente
-        patientAge: age,                               // Idade
-        patientDate: recordDate || null,              // Data de referência
+        createdAt: now.toISOString(),
+        patientName: name,
+        patientAge: age,
+        patientDate: recordDate || null,
         emotionCode: currentEmotionCode,
-        emotionLabel,                                  // Emoção selecionada (texto)
-        type: info.type,                               // "primary" ou "diad"
-        ring: info.ring || "diad",                     // Nível base da roda: high/mid/low/diad
+        emotionLabel,
+        type: info.type,
+        ring: info.ring || "diad",
         primaryKey: info.primary || null,
-        primaries: info.primaries || null,            // Para diades
-        userIntensity,                                // Intensidade subjetiva (leve/moderada/intensa)
-        context,                                      // Contexto
-        triggers,                                     // Gatilhos
-        behaviors,                                    // Comportamentos
-        desired                                       // Resposta desejada
+        primaries: info.primaries || null,
+        userIntensity,
+        context,
+        triggers,
+        behaviors,
+        desired
       };
 
       const records = getRecords();
@@ -2317,7 +2387,7 @@
     }
 
     /* ------------------------------------------------------------------
-       PDF clínico com jsPDF + autoTable
+       PDF
        ------------------------------------------------------------------ */
 
     async function handleDownloadPdf() {
@@ -2345,13 +2415,11 @@
       const margin = 15;
       let y = 18;
 
-      // Título
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
       doc.text("Registro Emocional – Roda de Plutchik", margin, y);
       y += 10;
 
-      // Bloco de dados principais
       doc.setFontSize(12);
       doc.text("Dados principais", margin, y);
       y += 6;
@@ -2393,7 +2461,6 @@
 
       y += 2;
 
-      // Bloco psicoeducativo
       doc.setFont("helvetica", "bold");
       doc.setFontSize(12);
       doc.text("Bloco psicoeducativo", margin, y);
@@ -2402,21 +2469,18 @@
       doc.setFontSize(10);
       doc.setFont("helvetica", "normal");
 
-      // Definição
       doc.text("Definição:", margin, y);
       y += 5;
       const defWrapped = doc.splitTextToSize(info.definition, 180);
       doc.text(defWrapped, margin + 4, y);
       y += defWrapped.length * 4 + 3;
 
-      // Função adaptativa
       doc.text("Função adaptativa:", margin, y);
       y += 5;
       const adapWrapped = doc.splitTextToSize(info.adaptive, 180);
       doc.text(adapWrapped, margin + 4, y);
       y += adapWrapped.length * 4 + 4;
 
-      // Principais riscos de manejo desadaptativo
       doc.setFont("helvetica", "bold");
       doc.text("Principais riscos de manejo desadaptativo:", margin, y);
       y += 5;
@@ -2426,7 +2490,6 @@
       doc.text(riscosWrapped, margin + 4, y);
       y += riscosWrapped.length * 4 + 4;
 
-      // Tabela: contexto, gatilhos, comportamentos, resposta desejada
       const tableBody = [
         ["Contexto emocional", context || "-"],
         ["Gatilhos percebidos", triggers || "-"],
@@ -2450,7 +2513,6 @@
       let finalY = doc.lastAutoTable.finalY || y + 10;
       finalY += 8;
 
-      // Bloco final: orientações gerais + espaço para anotações
       doc.setFont("helvetica", "bold");
       doc.setFontSize(12);
       doc.text("Orientações gerais e espaço para anotações", margin, finalY);
@@ -2467,13 +2529,11 @@
       doc.text(closingText, margin, finalY);
       finalY += closingText.length * 4 + 4;
 
-      // Linhas para anotações
       for (let i = 0; i < 5; i++) {
         doc.line(margin, finalY, 210 - margin, finalY);
         finalY += 6;
       }
 
-      // Rodapé clínico no PDF
       doc.setFontSize(9);
       doc.setFont("helvetica", "italic");
       const footerText = "Richelmy Murta – Psicólogo Clínico. Ferramenta psicoeducativa baseada na Roda das Emoções de Plutchik.";
@@ -2483,7 +2543,7 @@
     }
 
     /* ------------------------------------------------------------------
-       Envio para WhatsApp
+       WhatsApp
        ------------------------------------------------------------------ */
 
     function handleSendWhatsapp() {
@@ -2508,8 +2568,6 @@
 
       const shortContext = truncate(context || "", 200);
 
-      // PARA CUSTOMIZAR O TEXTO DA MENSAGEM:
-      // Ajuste a string textPlain abaixo conforme a necessidade clínica/comunicacional.
       const textPlain =
         "Registro emocional – Roda de Plutchik\n" +
         "Paciente: " + (name || "-") + (age ? " (" + age + " anos)" : "") + "\n" +
@@ -2551,11 +2609,8 @@
       } else {
         applyTheme("dark");
       }
+
       const btn = document.getElementById("themeToggle");
-      btn.addEventListener("click", () => {
-        const next = document.body.dataset.theme === "light" ? "dark" : "dark" ? "light" : "dark";
-      });
-      // Corrigindo toggle (a linha acima era só para mostrar o caos; aqui vem o real):
       btn.addEventListener("click", () => {
         const next = document.body.dataset.theme === "light" ? "dark" : "light";
         applyTheme(next);
@@ -2567,10 +2622,8 @@
        ------------------------------------------------------------------ */
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Ano no rodapé
       document.getElementById("footerYear").textContent = new Date().getFullYear();
 
-      // Data padrão do registro (hoje)
       const today = new Date();
       const isoToday = today.toISOString().slice(0, 10);
       document.getElementById("recordDate").value = isoToday;
@@ -2594,4 +2647,5 @@
   </script>
 </body>
 </html>
+
 
